@@ -29,7 +29,7 @@ export const addIncome = async (req, res) => {
 export const getIncomes = async (req, res) => {
     try {
         const incomes = await Income.find().sort({ createdAt: -1 });
-        res.status(200).json(incomes);
+        return res.status(200).json(incomes);
     } catch (error) {
         res.status(500).json({ message: "Server Error" });
     }
